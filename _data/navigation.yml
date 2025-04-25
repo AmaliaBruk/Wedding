@@ -2,11 +2,11 @@
 main:
   - title: "Home"
     url: /#intro
-  - title: "Programma"
+  - title: "Program"
     url: /#agenda
   - title: "RSVP"
     url: /rsvp/
-  - title: "Regalo di nozze"
+  - title: "Weddng gift"
     url: /#listanozze
   # - title: "La nostra storia"
   #   url: /us/
