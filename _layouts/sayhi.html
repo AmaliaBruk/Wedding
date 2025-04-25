@@ -1,0 +1,107 @@
+---
+---
+
+
+
+
+<!doctype html>
+<html lang="{{ site.locale | replace: " _", "-" | default: "en" }}" class="no-js">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<body
+  class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}"
+  dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+
+  <div class="initial-content">
+    <article class="" itemscope itemtype="https://schema.org/CreativeWork" {% if page.locale %} lang="{{ page.locale }}"
+      {% endif %}>
+
+      <div id="main" role="main" >
+        {% include sidebar.html %}
+
+        <head>
+          {% include head.html %}
+          {% include head/custom.html %}
+        </head>
+        {% include_cached masthead.html %}
+
+        <div class="page__inner-wrap">
+          <header>
+            {% if page.title -%}
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" |
+                  remove: "</p>" }}</a>
+            </h1>
+            {%- endif %}
+            {% include page__meta.html %}
+          </header>
+        </div>
+
+        <!-- EMPTY CONTAINER AS BACKGROUND of the fixed header -->
+        <div class="header_background"></div>
+
+
+        <section class="info-segment">
+
+          <h2 class="h2_intro">
+            Wela'!
+          <hr class="separator_intro">
+          </h2>
+          
+          <p class="p_intro"> Se gli astri si allineano, dovremmo riuscire a creare una sezione chiamata <i> il messaggio in bottiglia</i> ......
+
+
+        </section>
+
+
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{
+            site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        </section>
+
+        <footer class="page__meta">
+          {% if site.data.ui-text[site.locale].meta_label %}
+          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+          {% endif %}
+          {% include page__taxonomy.html %}
+          {% include page__date.html %}
+        </footer>
+
+        {% if page.share %}{% include social-share.html %}{% endif %}
+
+        {% include post_pagination.html %}
+      </div>
+
+      {% if site.comments.provider and page.comments %}
+      {% if jekyll.environment == 'production' %}
+      {% include comments.html %}
+      {% else %}
+      <p>
+        Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>,
+        but are disabled in non-production environments.
+      </p>
+      {% endif %}
+      {% endif %}
+    </article>
+
+  </div>
+
+  {% include after-content.html %}
+  </div>
+
+  {% if site.search == true %}
+  <div class="search-content">
+    {% include_cached search/search_form.html %}
+  </div>
+  {% endif %}
+
+  <div id="footer" class="page__footer">
+    <footer>
+      {% include footer/custom.html %}
+      {% include_cached footer.html %}
+    </footer>
+  </div>
+
+  {% include scripts.html %}
+</body>
+
+</html>

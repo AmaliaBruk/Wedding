@@ -1,0 +1,16 @@
+# main links
+main:
+  - title: "Home"
+    url: /#intro
+  - title: "Programma"
+    url: /#agenda
+  - title: "RSVP"
+    url: /rsvp/
+  - title: "Regalo di nozze"
+    url: /#listanozze
+  # - title: "La nostra storia"
+  #   url: /us/
+  # - title: "Diteci qualcosa"
+  #   url: /sayhi/
+
+    

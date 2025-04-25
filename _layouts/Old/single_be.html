@@ -1,0 +1,95 @@
+---
+layout: default_be
+---
+
+<div id="main" role="main">
+  {% include sidebar.html %}
+
+  <article class="" >
+    {% if page.title %}
+      <meta itemprop="headline" >
+      <em style="font-size: 25px;">{{page.excerpt}}</em>
+      </meta>
+    {% endif %}
+
+
+<div class="program-schedule">
+
+      <section class="page__content" itemprop="text" >
+        
+        {% if page.toc %}
+          <aside class="sidebar__right {% if page.toc_sticky %}sticky{% endif %}">
+            <nav class="toc">
+              <header><h4 class="nav__title"><i class="fas fa-{{ page.toc_icon | default: 'file-alt' }}"></i> {{ page.toc_label | default: site.data.ui-text[site.locale].toc_label | default: "On this page" }}</h4></header>
+              {% include toc.html sanitize=true html=content h_min=1 h_max=6 class="toc__menu" skip_no_ids=true %}
+            </nav>
+          </aside>
+        {% endif %}
+        {{ content }}
+        
+        <h2>Sabato 9 Agosto</h2>
+        <ul class="no-dots">
+          {% for event in page.schedule0 %}
+            <li><strong>{{ event.time }}</strong> {{ event.name | markdownify | html_decode }}</li>
+          {% endfor %}
+        </ul>
+        <div style="display: flex; justify-content: flex-start;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d147024.3695301993!2d10.633169686718738!3d43.73484219999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a663b284c0a2d%3A0x257c4ccf0c9638df!2sChiesa%20di%20Santa%20Maria%20a%20Petroio!5e1!3m2!1sit!2snl!4v1743458270856!5m2!1sit!2snl" 
+          width="400" 
+          height="300" 
+          style="border:0;"
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <h2>Domenica 10 Agosto</h2>
+        <ul class="no-dots">
+          {% for event in page.schedule1 %}
+            <li><strong>{{ event.time }}</strong> {{ event.name | markdownify | html_decode}}</li>
+          {% endfor %}         
+        </ul>
+        <div style="display: flex; justify-content: flex-start; gap: 30px">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d18361.987646213413!2d10.889868044045294!3d43.78714297519085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a66db0f19c94d%3A0xba658a1003d3ba5!2sChiesa%20Madre%20di%20Santa%20Croce!5e1!3m2!1sit!2snl!4v1743456790323!5m2!1sit!2snl" 
+                  width="400"
+                  height="300" 
+                  style="border:0;" 
+                  allowfullscreen="" 
+                  loading="lazy" 
+                  referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2295.9654502182884!2d10.90587791087701!3d43.76846737097633!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132a668ddc452c77%3A0x6a03846ad4efbc30!2sAgriturismo%20Streda!5e1!3m2!1sit!2snl!4v1743457793123!5m2!1sit!2snl" 
+          width="400" 
+          height="300" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+          
+        <h2>Luned&igrave 11 Agosto</h2>
+        <ul class="no-dots">
+          {% for event in page.schedule2 %}
+        <li> <strong>{{ event.time }}</strong> {{ event.name }}</li>
+        {% endfor %}
+
+        </ul>
+          
+
+      </section>
+
+
+
+      {% include post_pagination.html %}
+    </div>
+
+  </article>
+
+  {% comment %}<!-- only show related on a post page when `related: true` -->{% endcomment %}
+  {% if page.id and page.related and site.related_posts.size > 0 %}
+    {% include page__related.html posts=site.related_posts %}
+  {% comment %}<!-- otherwise show recent posts if no related when `related: true` -->{% endcomment %}
+  {% elsif page.id and page.related %}
+    {% include page__related.html posts=site.posts %}
+  {% endif %}
+</div>

@@ -1,0 +1,285 @@
+---
+---
+
+
+
+
+<!doctype html>
+<html lang="{{ site.locale | replace: " _", "-" | default: "en" }}" class="no-js">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<body
+  class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}"
+  dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+
+  <div class="initial-content">
+    <article class="" itemscope itemtype="https://schema.org/CreativeWork" {% if page.locale %} lang="{{ page.locale }}"
+      {% endif %}>
+
+      <div id="main" role="main" >
+        {% include sidebar.html %}
+
+        <head>
+          {% include head.html %}
+          {% include head/custom.html %}
+        </head>
+        {% include_cached masthead.html %}
+
+        <div class="page__inner-wrap">
+          <header>
+            {% if page.title -%}
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" |
+                  remove: "</p>" }}</a>
+            </h1>
+            {%- endif %}
+            {% include page__meta.html %}
+          </header>
+        </div>
+
+        <!-- EMPTY CONTAINER AS BACKGROUND of the fixed header -->
+        <div class="header_background"></div>
+
+
+        <!-- INTRODUCTION [CI SPOSIAMO!]-->
+        <section class="info-segment">
+
+          <h2 class="h2_intro">
+            NOI ! 
+          <hr class="separator_intro">
+          </h2>
+          
+          <p class="p_intro"> Una foto all'anno nel tentativo di riassumere la nostra storia ... 
+            <!DOCTYPE html>
+            <html lang="it">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Galleria di Immagini con Testo</title>
+                <style>
+                    body {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        background-color: #f5f5f5;
+                        margin: 0;
+                        padding: 20px;
+                    }
+                    
+                    h1 {
+                        text-align: center;
+                        color: #333;
+                    }
+                    
+                    .gallery {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                        gap: 20px;
+                        max-width: 1200px;
+                        margin: 0 auto;
+                    }
+                    
+                    .image-container {
+                        position: relative;
+                        width: 300px;
+                        height: 200px;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                        cursor: pointer;
+                    }
+                    
+                    .image {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        transition: transform 0.3s ease;
+                    }
+                    
+                    .text-overlay {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(0, 0, 0, 0.7);
+                        color: white;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 20px;
+                        box-sizing: border-box;
+                        opacity: 0;
+                        transition: opacity 0.3s ease;
+                        text-align: center;
+                        font-size: 12pt;
+                    }
+                    
+                    .text-overlay h3 {
+                        margin-top: 0;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .text-overlay p {
+                        margin: 0;
+                    }
+                    
+                    .image-container.active .image {
+                        transform: scale(1.1);
+                    }
+                    
+                    .image-container.active .text-overlay {
+                        opacity: 1;
+                    }
+                </style>
+            </head>
+            <body>
+                <!--<h1>Noi</h1>
+                <p style="text-align: center;">Una foto all'anno nel tentativo di riassumere la nostra storia ... </p> -->
+                
+                <div class="gallery" id="gallery">
+                    <!-- Le immagini verranno caricate dinamicamente -->
+                </div>
+            
+                <script>
+                    // Array di oggetti con dati delle immagini
+                    const imageData = [
+                        {
+                            src: "{{ site.baseurl }}/assets/images/us_1.jpg", // Sostituire con percorso reale
+                            title: "Estate 2020",
+                            description: "Ci conosciamo nell'estate 2019 nella mensa universitaria di Genova grazie ad un amico in comune. Ci perdiamo di vista fino all'estate 2020, momento in cui ci ritroviamo, sempre nella mensa universitaria. "
+                        },
+                        {
+                            src: "{{ site.baseurl }}/assets/images/us_2.jpg", // Sostituire con percorso reale
+                            title: "Primavera 2021",
+                            description: "Durante l'ondata COVID del 2021 abbiamo vissuto a Vinci per diversi mesi, tra lezioni online, tirocinio, tesi, gatti e un bell'orto!"
+                        },
+                        {
+                            src: "{{ site.baseurl }}/assets/images/us_3.jpg", // Sostituire con percorso reale
+                            title: "2022",
+                            description: "I luoghi in cui ci fermiamo per periodi pi&ugrave o meno lunghi iniziano ad aumentare: Genova, Vinci, Atene, Milano, Bangkok e Haarlem."
+                        },
+                        {
+                            src: "{{ site.baseurl }}/assets/images/us_4.jpg", // Sostituire con percorso reale
+                            title: "2023",
+                            description: ""
+                        },
+                        {
+                            src: "{{ site.baseurl }}/assets/images/us_5.jpg", // Sostituire con percorso reale
+                            title: "",
+                            description: ""
+                        },
+                        {
+                            src: "{{ site.baseurl }}/assets/images/us_6.jpg", // Sostituire con percorso reale
+                            title: "",
+                            description: ""
+                        }
+                    ];
+            
+                    // Funzione per caricare le immagini nel DOM
+                    function loadImages() {
+                        const gallery = document.getElementById('gallery');
+                        
+                        imageData.forEach((data, index) => {
+                            // Crea container per immagine
+                            const container = document.createElement('div');
+                            container.className = 'image-container';
+                            container.dataset.index = index;
+                            
+                            // Crea elemento immagine
+                            const img = document.createElement('img');
+                            img.src = data.src;
+                            img.alt = data.title;
+                            img.className = 'image';
+                            
+                            // Crea overlay testo
+                            const textOverlay = document.createElement('div');
+                            textOverlay.className = 'text-overlay';
+                            
+                            const title = document.createElement('h3');
+                            title.textContent = data.title;
+                            
+                            const description = document.createElement('p');
+                            description.textContent = data.description;
+                            
+                            // Assembla elementi
+                            textOverlay.appendChild(title);
+                            textOverlay.appendChild(description);
+                            
+                            container.appendChild(img);
+                            container.appendChild(textOverlay);
+                            
+                            // Aggiungi event listener
+                            container.addEventListener('click', toggleText);
+                            
+                            // Aggiungi alla galleria
+                            gallery.appendChild(container);
+                        });
+                    }
+                    
+                    // Funzione per mostrare/nascondere il testo
+                    function toggleText(event) {
+                        const container = event.currentTarget;
+                        container.classList.toggle('active');
+                    }
+                    
+                    // Carica le immagini quando la pagina è pronta
+                    document.addEventListener('DOMContentLoaded', loadImages);
+                </script>
+            </body>
+            </html>
+
+        </section>
+
+
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{
+            site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        </section>
+
+        <footer class="page__meta">
+          {% if site.data.ui-text[site.locale].meta_label %}
+          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+          {% endif %}
+          {% include page__taxonomy.html %}
+          {% include page__date.html %}
+        </footer>
+
+        {% if page.share %}{% include social-share.html %}{% endif %}
+
+        {% include post_pagination.html %}
+      </div>
+
+      {% if site.comments.provider and page.comments %}
+      {% if jekyll.environment == 'production' %}
+      {% include comments.html %}
+      {% else %}
+      <p>
+        Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>,
+        but are disabled in non-production environments.
+      </p>
+      {% endif %}
+      {% endif %}
+    </article>
+
+  </div>
+
+  {% include after-content.html %}
+  </div>
+
+  {% if site.search == true %}
+  <div class="search-content">
+    {% include_cached search/search_form.html %}
+  </div>
+  {% endif %}
+
+  <div id="footer" class="page__footer">
+    <footer>
+      {% include footer/custom.html %}
+      {% include_cached footer.html %}
+    </footer>
+  </div>
+
+  {% include scripts.html %}
+</body>
+
+</html>

@@ -1,0 +1,539 @@
+---
+---
+
+<!doctype html>
+<html lang="{{ site.locale | replace: " _", "-" | default: "en" }}" class="no-js">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+<body
+  class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}"
+  dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
+
+  <div class="initial-content">
+
+    <article class="" itemscope itemtype="https://schema.org/CreativeWork" {% if page.locale %} lang="{{ page.locale }}"
+      {% endif %}>
+
+      <div id="main" role="main" >
+        {% include sidebar.html %}
+
+        <head>
+          {% include head.html %}
+          {% include head/custom.html %}
+        </head>
+        {% include_cached masthead.html %}
+
+        <div class="page__inner-wrap">
+          <header>
+            {% if page.title -%}
+            <h1 id="page-title" class="page__title" itemprop="headline">
+              <a href="{{ page.url | absolute_url }}" itemprop="url">{{ page.title | markdownify | remove: "<p>" |
+                  remove: "</p>" }}</a>
+            </h1>
+            {%- endif %}
+            {% include page__meta.html %}
+          </header>
+        </div>
+
+        <!-- EMPTY CONTAINER AS BACKGROUND of the fixed header -->
+        <div class="header_background"></div>
+
+
+        <!-- Hero Section -->
+        <section class="hero-header"  id="intro">
+          <div class="container">
+            <!-- Nulla!  -->
+          </div>
+        </section>
+
+        <!-- INTRODUCTION [CI SPOSIAMO!]-->
+        <section class="info-segment">
+
+          <h2 class="h2_intro">
+            CI SPOSIAMOOOOOO!
+          <hr class="separator_intro">
+          </h2>
+          
+          <!-- Count down -->
+          <div class="container_countdown">
+            <p class="p_intro_countdown"><i>Mancano solo</i></p><br>
+            <div id="countdown">
+              <script>
+                // Set the date we're counting down to
+                var countDownDate = new Date("Aug 10, 2025 16:00:00").getTime();
+
+                // Update the countdown every 1 second
+                var x = setInterval(function () {
+                  // Get the current date and time
+                  var now = new Date().getTime();
+
+                  // Calculate the time remaining
+                  var distance = countDownDate - now;
+
+                  // Time calculations for days, hours, minutes, and seconds
+                  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+                  // Display the countdown in the element with id="countdown"
+                  document.getElementById("countdown").innerHTML =
+                    days + " giorni <br> " + hours + " ore e " + minutes + " minuti ";
+
+                  // If the countdown is over, display a message
+                  if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("countdown").innerHTML = "EXPIRED";
+                  }
+                }, 1000);
+              </script>
+            </div><br>
+            <p class="p_intro_countdown"><i> al nostro matrimonio! </i></p>
+          </div>
+
+
+          <p class="p_intro"> Ciao amici, amiche e parenti!. <br> Se stavate cercando informazioni sull'organizzazione del
+            nostro
+            matrimonio, siete nel posto giusto!</p>
+          <p class="p_intro"> Siamo molto felici di festeggiare con tutti voi, per questo speriamo che possiate esserci
+            il giorno del nostro matrimonio e per il resto della nostra vita.
+          </p>
+          <p class="p_intro"> I momenti principali saranno i seguenti: la cena etiope di benvenuto di Sabato 9 Agosto,
+            la
+            Cerimonia religiosa e la festa di matrimonio di Domenica 10 Agosto.</p>
+          <p class="p_intro"> Qui sotto trovate tutte le informazioni utili. Non dimenticatevi di confermare la vostra
+            presenza <a href="{{ request.path}}/Matrimonio/rsvp">QUI entro l'<b>11 Maggio</b></a>.</p>
+          <p class="p_intro"> Per qualsiasi cosa, non esitate a contattarci <br> (i numeri li conoscete {{"😉"}}).</p>
+          <br>
+          <p class="p_intro"> Vi vogliamo bene. <br>
+            Un abbraccio,<br>
+            Amalia & Bruk<br>
+          </p>
+        </section>
+
+        <!-- Set of three pictures  -->
+        <div class="gallery-2">
+          <div class="three_images"><img src="{{ site.baseurl }}/assets/images/vinci_us.jpg"></div>
+          <div class="three_images"><img src="{{ site.baseurl }}/assets/images/genoa_us.jpg"></div>
+          <div class="three_images"><img src="{{ site.baseurl }}/assets/images/antwerp_us.jpg"></div>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="hero-1"  id="agenda">
+          <div class="container">
+            <!-- Nulla!  -->
+          </div>
+        </section>
+
+        <!-- PLAN FOR THE 3 days -->
+        <section class="programma-segment-1">
+
+          <div class="info-segment-2">
+            <h2 class="h2_info">
+              Programma
+              <hr class="separator">
+            </h2>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12">
+              <h2 class="sub_h2_info">Sabato 9 Agosto
+                <hr class="separator">
+              </h2>
+              
+              <div class="desktop-only">
+
+                <dl class="dl-horizontal">
+                  <dt>Evento:</dt>
+                  <dd class="p_list"> Cena etiope di benvenuto</dd>
+                  <br>
+                  <dt>Quando:</dt>
+                  <dd class="p_list">Sabato 9 Agosto dalle ore 18:00</dd>
+                  <br>
+                  <dt>Dove:</dt>
+                  <dd class="p_list">Vinci, a breve info più dettagliate</dd>
+                  <br>
+                </dl>
+              </div>
+              <div class="desktop-only">
+
+                <dl class="dl-horizontal">
+                  <dt>Evento:</dt>
+                  <dd class="p_list"> Cena etiope di benvenuto</dd>
+                  <br>
+                  <dt>Quando:</dt>
+                  <dd class="p_list">Sabato 9 Agosto dalle ore 18:00</dd>
+                  <br>
+                  <dt>Dove:</dt>
+                  <dd class="p_list">Vinci, a breve info più dettagliate</dd>
+                  <br>
+                </dl>
+              </div>
+              <div class="mobile-only">
+
+                  <b>Evento:</b><br>
+                  <dd class="p_list"> Cena etiope di benvenuto</dd>
+                  <br>
+                  <br>
+                  <b>Quando:</b><br>
+                  <dd class="p_list">Sabato 9 Agosto dalle ore 18:00</dd>
+                  <br>
+                  <br>
+                  <b>Dove:</b><br>
+                  <dd class="p_list">Vinci, a breve info più dettagliate!</dd>
+                  <br>
+                  <br>
+                </dl>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <!-- INFORMAZIONI SUL LUOGO E POSIZIONE -->
+
+        <!-- PLAN FOR THE 3 days -->
+        <section class="programma-segment-2">
+          <div class="row">
+            <div class="col-lg-12 ">
+              <h2 class="sub_sub_h2_info">Pomeriggio di</h2>
+              <h2 class="sub_h2_info">DOMENICA 10 AGOSTO
+                <hr class="separator">
+              </h2>
+              <div class="desktop-only">
+
+                <dl class="dl-horizontal">
+                  <dt>Evento:</dt>
+                  <dd class="p_list"> Cerimonia religiosa </dd>
+                  <br>
+                  <dt>Quando:</dt>
+                  <dd class="p_list">Domenica 10 Agosto, dalle ore 16:27</dd>
+                  <br>
+                  <dt>Dove:</dt>
+                  <dd class="p_list"> Chiesa di Vinci, "Chiesa Madre di Santa Croce di Vinci"</dd>
+                  <br>
+                  <!-- <dt>Info:</dt>
+                  <dd class="p_list">Ci sar&agrave dell'acqua fresca all'uscita!</dd>
+                  <br> !-->
+                  <dt>Parcheggio:</dt>
+                  <dd class="p_list"> Su via Fucini e via Montalbano c'è un'ampia disponibilità
+                    di parcheggi liberi. Sulla mappa sotto sono segnati in blu. </dd>
+                  <br>
+                  <dt>Altre info:</dt>
+                  <dd class="p_list"> Una volta parcheggiata l'auto, le vie di accesso alla Chiesa sono diverse. </dd><br>
+                  <dt></dt>
+                  <dd class="p_list">Quelle senza barriere architettoniche sono su via Montalbano all'altezza della
+                    biglietteria del Museo Leonardiano;</dd><br>
+                  <dd class="p_list">oppure, all'altezza del Parco del fiume della Pace-Parco Zeffirelli.</dd>
+                  <br>
+                </dl>
+              </div>
+              <div class="mobile-only">
+                  <b>Evento:</b><br>
+                  Cerimonia religiosa
+                  <br>
+                  <br>
+                  <b>Quando:</b><br>
+                  Domenica 10 Agosto, dalle ore 16:27
+                  <br>
+                  <br>
+                  <b>Dove:</b><br>
+                  Chiesa di Vinci, "Chiesa Madre di Santa Croce di Vinci"
+                  <br>
+                  <br>
+                  <b>Parcheggio:</b><br>
+                  Su via Fucini e via Montalbano c'è un'ampia disponibilità
+                    di parcheggi liberi. Sulla mappa sotto sono segnati in blu.
+                  <br>
+                  <br>
+                  <b>Altre info:</b><br>
+                  Una volta parcheggiata l'auto, le vie di accesso alla Chiesa sono diverse.<br>
+                  Quelle senza barriere architettoniche sono su via Montalbano all'altezza della
+                  biglietteria del Museo Leonardiano;<br>
+                  oppure, all'altezza del Parco del fiume della Pace-Parco Zeffirelli.
+                  <br>
+                  <br>
+              </div>
+            </div>
+          </div>
+
+        </section>
+        <section class="programma-segment-2">
+
+          <div class="row">
+            <div class="col-lg-12 ">
+              <h2 class="sub_sub_h2_info">Sera di</h2>
+              <h2 class="sub_h2_info">DOMENICA 10 AGOSTO
+                <hr class="separator">
+              </h2>
+              <div class="desktop-only">
+                <dl class="dl-horizontal">
+                  <dt>Evento:</dt>
+                  <dd class="p_list"> Ricevimento </dd>
+                  <br>
+                  <dt>Quando:</dt>
+                  <dd class="p_list">Domenica 10 Agosto, dopo la Cerimonia. Verosimilmente dalle ore 18:30</dd>
+                  <br>
+                  <dt>Dove:</dt>
+                  <dd class="p_list">Agriturismo Streda, presso il Belvedere di Streda</dd>
+                  <br>
+                  <dt>Info:</dt>
+                  <dd class="p_list"> Visto il caldo di Agosto, ci sarà la possibilità di rinfrescarsi con un bagno in
+                    piscina.
+                  </dd>
+                  <br>
+                  <dt></dt>
+                  <dd class="p_list"> &Egrave tutta a nostra disposizione fino al tramonto ( .. subito dopo la chiudono,
+                    ahimè!).</dd>
+                  <br>
+                  <dt></dt>
+                  <dd class="p_list"> Quindi, se siete presi bene, non dimenticatevi il costume! {{🏊}} </dd>
+                  <br>
+                  <dt>Parcheggio:</dt>
+                  <dd class="p_list">Davanti la stuttura c'è un'ampia disponibilità! Per&ograve fate attenzione alla
+                    strada, è sterrata ...</dd>
+                  <br>
+                  <dt>Altre info:</dt>
+                  <dd class="p_list"> Venite presi bene!!! </dd>
+                  <br>
+
+                </dl>
+              </div>
+
+              <div class="mobile-only">
+                  <b>Evento:</b><br>
+                   Ricevimento 
+                  <br>
+                  <br>
+                  <b>Quando:</b><br>
+                  Domenica 10 Agosto, dopo la Cerimonia. Verosimilmente dalle ore 18:30.
+                  <br>
+                  <br>
+                  <b>Dove:</b><br>
+                  Agriturismo Streda, presso il Belvedere di Streda
+                  <br>
+                  <br>
+                  <b>Info:</b><br>
+                  Visto il caldo di Agosto, ci sarà la possibilità di rinfrescarsi con un bagno in
+                  piscina. &Egrave tutta a nostra disposizione fino al tramonto ( .. subito dopo la chiudono,
+                  ahimè!). Quindi, se siete presi bene, non dimenticatevi il costume! 🏊
+                  <br>
+                  <br>
+                  <b>Parcheggio:</b><br>
+                  Davanti la stuttura c'è un'ampia disponibilità! Per&ograve fate attenzione alla
+                  strada, è sterrata ...<br>
+                  <br>
+                  <b>Altre info:</b><br>
+                  Venite presi bene!!!
+                  <br>
+              </div>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- PLAN FOR THE 3 days -->
+        <section class="programma-segment-2">
+          <div class="row">
+            <div class="col-lg-12 ">
+              <h2 class="sub_h2_info">Luned&igrave 11 Agosto
+                <hr class="separator">
+              </h2>
+              <div class="desktop-only">
+                <dl class="dl-horizontal">
+                  <dt>Evento:</dt>
+                  <dd class="p_list"> (Per chi vuole) Colazione insieme, saluti baci e abbracci!</dd>
+                  <br>
+                  <dt>Quando:</dt>
+                  <dd class="p_list">Luned&igrave, dalle ore 9:30</dd>
+                  <br>
+                  <dt>Dove:</dt>
+                  <dd class="p_list">Agriturismo Streda, presso Belvedere di Streda</dd>
+                  <br>
+                  <!--<dt>Info:</dt>
+                  <dd class="p_list">Per chi dorme Dovremo liberare la struttura entro le 11.</dd>-->
+                </dl>
+              </div>
+              <div class="mobile-only">
+                  <b>Evento:</b><br>
+                  (Per chi vuole) Colazione insieme, saluti baci e abbracci!
+                  <br>
+                  <br>
+                  <b>Quando:</b><br>
+                  Luned&igrave, dalle ore 9:30
+                  <br>
+                  <br>
+                  <b>Dove:</b><br>
+                  Agriturismo Streda, presso Belvedere di Streda.
+                  <br>
+                  <br>
+              </div>
+
+          </div>
+          </div>
+        </section>
+
+
+        <!-- Hero Section -->
+        <section class="section-1">
+          <div class="container">
+            <!-- Nulla!  -->
+          </div>
+        </section>
+
+        <section class="programma-segment-5">
+          <div class="info-segment-2">
+            <h2 class="h2_info">
+               Come arrivare a Vinci?
+              <hr class="separator">
+            </h2>
+            <p class="li_intro"> Qualsiasi mezzo pensi di prendere, non farti problemi a contattarci se hai qualche
+              dubbio.<br>
+              Ancora meglio se nel questionario sotto, ci fai sapere se hai bisogno di un passaggio indicando da quale
+              città parti oppure se hai dei posti liberi in macchina.
+            </p><br>
+            <p class="li_intro"> TI ASPETTIAMO A VINCI !!!</p><br>
+          </div>
+          <ul>
+            <li class="li_intro"> Se arrivi in auto, esci dalla autostrada FI-PI-LI all'altezza di EMPOLI
+              CENTRO.
+              Segui le indicazioni stradali per Vinci. La Chiesa si trova al centro del paese.
+            </li>
+            <li class="li_intro"> Se arrivi in treno, la stazione dei treni più vicina è quella di EMPOLI.<br>
+              Volendo è possibile arrivare a Vinci con un autobus extraurbano (linea 49 EMPOLI-VINCI).<br>
+              Se ci fai sapere a che ore arrivi, ci organizziamo per venirti a prendere in stazione!
+            </li>
+            <li class="li_intro">Se arrivi in aereo, l'aeroporto più vicino è quello di Pisa "Galileo
+              Galilei" o di Firenze "Amerigo Vespucci". <br>
+              Dall'aeroporto di Firenze puoi prendere la tramvia T2 fino alla stazione Santa Maria Novella di Firenze e
+              da lì prendere un treno.<br>
+              Dall'aeroporto di Pisa puoi prendere il Pisamover e scendere in stazione centrale a Pisa. Oppure, farti 15
+              minuti di passeggiata e arrivare in stazione.
+            </li>
+            <li class="li_intro"> Se arrivi in Flixbus, EMPOLI è una fermata. Se non è disponibile, prova
+              con Firenze o Pisa</li>
+          </ul>
+
+        </section>
+
+        <!-- Hero Section -->
+        <section class="hero-4">
+          <div class="container">
+            <!-- Nulla!  -->
+          </div>
+        </section>
+
+        <!-- PLAN FOR THE 3 days -->
+        <section class="programma-segment-5" id="rsvp">
+          <div class="info-segment-2">
+            <h2 class="h2_info">
+               Partecipazione ed RSVP
+              <hr class="separator">
+            </h2>
+            <p class="li_intro">Non dimenticarti di confermare la tua presenza <a href="{{ request.path}}/Matrimonio/rsvp">QUI entro l'<b>11 Maggio</b>!</a>
+              {{ "😉" }}</p>
+            <p class="li_intro"> Alcune informazioni da tenere a mente:</p>
+          </div>
+          <ul>
+            <li class="li_intro"> C' &egrave una piscina, non dimenticarti il costume!</li>
+            <li class="li_intro">Ci farebbe piacere rendere la trasferta pi&ugrave tranquilla possibile per tutti.<br>
+              Se avete dei posti in macchina, o avete bisogno di un passaggio, <b>fatecelo sapere!</b>
+            </li>
+            <li class="li_intro">Tutta la struttura di Streda Belvedere sarà a nostra completa disposizione a partire dal pomeriggio del sabato fino al lunedì mattina:<br>
+              abbiamo già prenotato tutte le camere e appartamenti disponibili, in caso è anche possibile montare qualche tenda.
+            </li>
+            <li class="li_intro"> La lingua principale sarà l'italiano but please, don't be shy to speak in English!
+              There are some people from around the world.
+            </li>
+          </ul>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="hero-3">
+          <div class="container">
+            <!-- Nulla!  -->
+          </div>
+        </section>
+
+        <!-- PLAN FOR THE 3 days -->
+        <section class="programma-segment-6" id="listanozze">
+          <div class="info-segment-2">
+            <h2 class="h2_info">
+              Regalo di nozze
+              <hr class="separator">
+            </h2>
+            <p class="li_intro">Se sei arrivata fin qua, che dire, GRAZIE perchè stai prendendo anche solo in
+              considerazione l'idea di esserci al Nostro Matrimonio.<br>
+              Il regalo più bello che tu possa farci è la tua presenza, non solo il giorno del nostro Matrimonio, ma nella nostra vita.</p><br>
+            <p class="li_intro">Casa nostra, dovunque sarà, è sempre aperta. Davvero, davvero! </p>
+
+            <p class="li_intro">Se desideri contribuire alla realizzazione dei nostri sogni come famiglia, qui trovi uno dei
+              tanti modi in cui puoi contribuire al nostro viaggio di nozze. {{🎒🌴}}<br>
+              <br>
+              <i>IBAN: NL88 ABNA 0139 7898 47</i><br>
+              <i>BENEFICIARIO: Amalia Innocenti and Bruk Mohamed Nur</i><br>
+              <i>BIC: ABNANL2A</i><br>
+
+              (altrimenti vienici a trovare! {{ "😜" }}) </p>
+          </div>
+
+        </section>
+
+
+
+
+
+
+
+
+        {% if page.link %}<div><a href="{{ page.link }}" class="btn btn--primary">{{
+            site.data.ui-text[site.locale].ext_link_label | default: "Direct Link" }}</a></div>{% endif %}
+        </section>
+
+        <footer class="page__meta">
+          {% if site.data.ui-text[site.locale].meta_label %}
+          <h4 class="page__meta-title">{{ site.data.ui-text[site.locale].meta_label }}</h4>
+          {% endif %}
+          {% include page__taxonomy.html %}
+          {% include page__date.html %}
+        </footer>
+
+        {% if page.share %}{% include social-share.html %}{% endif %}
+
+        {% include post_pagination.html %}
+      </div>
+
+      {% if site.comments.provider and page.comments %}
+      {% if jekyll.environment == 'production' %}
+      {% include comments.html %}
+      {% else %}
+      <p>
+        Comments are configured with provider: <strong>{{ site.comments.provider }}</strong>,
+        but are disabled in non-production environments.
+      </p>
+      {% endif %}
+      {% endif %}
+    </article>
+
+  </div>
+
+  {% include after-content.html %}
+  </div>
+
+  {% if site.search == true %}
+  <div class="search-content">
+    {% include_cached search/search_form.html %}
+  </div>
+  {% endif %}
+
+  <div id="footer" class="page__footer">
+    <footer>
+      {% include footer/custom.html %}
+      {% include_cached footer.html %}
+    </footer>
+  </div>
+
+  {% include scripts.html %}
+</body>
+
+</html>
