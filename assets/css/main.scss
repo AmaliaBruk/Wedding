@@ -169,7 +169,6 @@ html, body {
 }
 
 .container_countdown {
-  padding-left: 110px;
   padding-bottom: 20px;
   text-align: center;
   padding-top: 15px;
@@ -319,12 +318,11 @@ html, body {
     font-weight: bold;
     text-align: center;
     color: #fff;
-    background-color: 	 #e6b800;
+    background-color: #e6b800;
     padding: 5px;
     border-radius: 5px;
-    width: fit-content;
-    height: 40p;
-  }
+    height: 100px;
+}
 
 dl {
   margin: 0;
@@ -490,14 +488,14 @@ ul li {
 
 
 .button-71 {
-  background-color: $primary-color;
+  background-color: #db8b1d;
   border: 0;
   border-radius: 56px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 600;
   outline: 0;
   padding: 16px 21px;
@@ -724,7 +722,7 @@ ul li {
   background-position: center;
   background-size: cover;
   width: 100%;
-  height: 200px;
+  height: 280px;
   margin-top: -30px;
   margin-bottom: 0;
 
@@ -1022,5 +1020,34 @@ ul li {
   .desktop-only { 
     display: none;
    }
+
+   .div_button {
+    padding-left: 10px;
+    text-align: center;
+    width: 100%;
+    height: auto;
+    margin: 10px auto;
+}
+
+  .button-71 {
+    background-color: #db8b1d;
+    border: 0;
+    border-radius: 56px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: system-ui, -apple-system, system-ui, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    outline: 0;
+    padding: 12px 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: all .3s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  }
 
 }
